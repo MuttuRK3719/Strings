@@ -56,3 +56,20 @@ https://leetcode.com/problems/robot-return-to-origin/
         }
         return count['R'-'A']==count['L'-'A']&&count['U'-'A']==count['D'-'A'];
     }
+ public static  String reverseWords(String s) {
+        char []ch=s.toCharArray();
+        for(int i=0;i<s.length()-1;i++){
+            int f=i;
+            while(i<ch.length&&ch[i]!=' '){
+                i++;
+            }
+            swap(ch,f,i-1);
+        }
+        return new String(ch);
+    }
+    static void swap(char []ch,int i,int j){
+        while(i<j){
+        char temp=ch[i];
+        ch[i++]=ch[j];
+        ch[j--]=temp;
+    }}
