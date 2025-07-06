@@ -37,3 +37,22 @@ https://leetcode.com/problems/number-of-strings-that-appear-as-substrings-in-wor
     }
     return count;
     }
+https://leetcode.com/problems/robot-return-to-origin/
+ public static  boolean judgeCircle1(String moves) {
+        int count=0;
+        int count2=0;
+    for(char ch:moves.toCharArray()){
+        if(ch=='L') count++;
+        else if(ch=='R')count--;
+        else if(ch=='U')count2++;
+        else count2--;
+    }
+    return count==0&&count2==0;
+    }
+    public static  boolean judgeCircle(String moves) {
+        int []count=new int[26];
+        for(char ch:moves.toCharArray()){
+            count[ch-'A']++;
+        }
+        return count['R'-'A']==count['L'-'A']&&count['U'-'A']==count['D'-'A'];
+    }
