@@ -73,3 +73,13 @@ https://leetcode.com/problems/robot-return-to-origin/
         ch[i++]=ch[j];
         ch[j--]=temp;
     }}
+https://leetcode.com/problems/excel-sheet-column-title/
+    public String convertToTitle(int columnNumber) {
+        StringBuilder st=new StringBuilder();
+        while(columnNumber>0){
+            columnNumber--;
+            st.append((char)(columnNumber%26+'A'));
+            columnNumber/=26;
+        }
+        return st.reverse().toString();
+    }
