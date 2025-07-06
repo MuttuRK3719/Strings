@@ -83,3 +83,27 @@ https://leetcode.com/problems/excel-sheet-column-title/
         }
         return st.reverse().toString();
     }
+
+
+https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/
+ public int strStr(String haystack, String needle) {
+    char[]st1=haystack.toCharArray();
+        char[]st2=needle.toCharArray();
+        int startIndex=-1;
+        for(int i=0;i<st1.length;i++){
+            startIndex=i;
+            int j=0;
+            while(i<st1.length&&j<st2.length){
+            if(st1[i]==st2[j]){
+              i++;
+              j++;
+            } 
+            else{
+                i=startIndex;
+                break;
+            }
+        }
+        if(j==st2.length) return startIndex;
+        }
+        return -1;
+    }
