@@ -107,3 +107,21 @@ https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string
         }
         return -1;
     }
+
+https://leetcode.com/problems/longest-common-prefix/
+   public String longestCommonPrefix(String[] strs) {
+     char []ch=strs[0].toCharArray();
+     int k=ch.length;
+     for(int i=1;i<strs.length;i++){
+        k=match(ch,strs[i],k);
+        if(k==0) return "";
+     }
+     return new String(ch,0,k);
+    }
+    int match(char []ch,String s,int k){
+        int i=0;
+        for( i=0;i<k&&i<s.length();i++){
+            if(ch[i]!=s.charAt(i)) return i;
+        }
+        return Math.min(k,s.length());
+    }
