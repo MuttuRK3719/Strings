@@ -11,6 +11,7 @@ public static void purmulation(String p,String up){
             purmulation(start+ch+f,up.substring(1));
         }
     }
+  
 
 
 [ad, ae, af, bd, be, bf, cd, ce, cf]
@@ -76,5 +77,11 @@ skip("","ababba");------->bbb
         return ch+skip(up.substring(1));
     }                                
 
-
+System.out.println(skiString("ababkappkba","app"));----------->ababkkba
+  public static String skiString(String up,String replace){
+        if(up.isEmpty()) return "";
+        
+        if(up.startsWith(replace)) return skiString(up.substring(replace.length()),replace);
+        return up.charAt(0)+skiString(up.substring(1),replace);
+    }
         
