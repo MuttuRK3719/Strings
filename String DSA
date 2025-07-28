@@ -125,3 +125,16 @@ https://leetcode.com/problems/longest-common-prefix/
         }
         return Math.min(k,s.length());
     }
+
+https://leetcode.com/problems/check-if-binary-string-has-at-most-one-segment-of-ones/
+public boolean checkOnesSegment(String s) {
+        int count=0;
+        if(s.length()==1) return s.charAt(0)=='1';
+        boolean b=true;
+    for(char ch:s.toCharArray()){
+        if(count>0&&ch=='0')b=false;
+        if(ch=='1'&&!b) return false;
+        if(ch=='1')count++;
+    }       
+    return true;
+    }
