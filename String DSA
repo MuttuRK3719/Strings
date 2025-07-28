@@ -138,3 +138,23 @@ public boolean checkOnesSegment(String s) {
     }       
     return true;
     }
+
+
+https://leetcode.com/problems/merge-strings-alternately/
+
+public String mergeAlternately(String word1, String word2) {
+        int i=0,j=0;
+        char []margeChar=new char[word1.length()+word2.length()];
+        int k=0;
+        while(i<word1.length()&&j<word2.length()){
+            margeChar[k++]=word1.charAt(i++);
+            margeChar[k++]=word2.charAt(j++);
+        }
+        while(i<word1.length()){
+            margeChar[k++]=word1.charAt(i++);
+        }
+        while(j<word2.length()){
+            margeChar[k++]=word2.charAt(j++);
+        }
+        return new String(margeChar);
+    }
