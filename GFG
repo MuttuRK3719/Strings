@@ -23,3 +23,37 @@ class Solution {
 }
     
 }
+https://www.geeksforgeeks.org/problems/license-key-formatting/1
+// User function Template for Java
+
+class Solution {
+    static String ReFormatString(String S, int K) {
+        // code here
+        boolean first=false;
+        int k=0;
+        int j=0;
+        StringBuilder formatedString=new StringBuilder();
+        for(int i=S.length()-1;i>=0;i--){
+            char ch=S.charAt(i);
+            if(ch>='a'&&ch<='z'){
+                ch=(char)(ch-32);
+            }
+            if(Character.isLetterOrDigit(S.charAt(S.length()-i-1))&&!first){
+                first=true;
+                j=S.length()-i-1;
+            }
+            if(ch!='-')
+            formatedString.append(ch);
+            
+            if(ch!='-'){
+                k++;
+            }
+            if(k==K&&i>0&&i!=j){
+                k=0;
+                formatedString.append('-');
+            }
+            
+        }
+        return formatedString.reverse().toString();
+    }
+}
